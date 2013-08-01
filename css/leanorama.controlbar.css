@@ -1,0 +1,66 @@
+/*
+    LEANORAMA - jQuery Plugin for displaying and navigating panoramic images.
+    Control Bar Extension - dispalys navigations control bar for leanorama objects.
+
+    Version 0.1.0
+    -------------
+    Copyright 2013 Leandigo (www.leandigo.com). All rights reserved.
+    Use is subject to terms.
+    
+*/
+
+@font-face {
+    font-family: 'Leanscape';
+    src: url('../font/leanscape.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.leanorama-controlbar {
+    position: fixed;
+    bottom: 0; left: 0;
+    
+    /* prevent text selection of buttons */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    .leanorama-controlbar-bg {
+        position: absolute;
+        bottom: 0; left: 0;    
+        width: 100%; height: 100%;
+        background-color: #000;
+        opacity: 0.6; filter: alpha(opacity=60);
+        border-top-right-radius: .5em;
+    }
+    
+    .leanorama-controlbar-controls {
+        position: relative;
+        padding: 0 1em;
+    }
+    
+        .leanorama-controlbar-button {
+            display: inline-block;
+            padding: .07em .1em;
+            font-family: Leanscape;
+            font-size: 5em;
+            color: #fff;
+            z-index: 10001;
+        }
+        
+        @media only screen and (max-device-width: 480px) {
+            .leanorama-controlbar-button {
+                font-size: 3em;
+            }
+        }
+    
+        .leanorama-controlbar-button:hover {
+            cursor: pointer;   
+        }
+
+

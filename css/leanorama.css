@@ -1,0 +1,120 @@
+/*
+    LEANORAMA - jQuery Plugin for displaying and navigating panoramic images.
+
+    Version 0.1.0
+    -------------
+    Copyright 2013 Leandigo (www.leandigo.com). All rights reserved.
+    Use is subject to terms.
+    
+*/
+
+.leanorama-target {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.leanorama-container {
+    position: absolute;
+    background: none;
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-perspective: 645;
+    overflow: hidden;
+}
+
+.leanorama-progress {
+    position: absolute;
+    z-index: 10000;
+    display: none;
+    top: 40%;
+    left: 10%;
+    min-width: 80%;
+    max-width: 80%;
+    min-height: 20%;
+    max-height: 20%;
+    border: 2px solid #002244;
+    opacity: 0.5; filter: alpha(opacity=50);
+}
+
+.leanorama-surface {
+    background: none;
+    position: absolute;
+    min-width: 512px;
+    min-height: 512px;
+    transform-style: preserve-3d; -webkit-transform-style: preserve-3d;
+}
+
+.leanorama-cube {
+    background: none;
+    width: 1026px;
+    height: 1026px;
+    position: absolute;
+    opacity: 1; filter: alpha(opacity=100);
+    -webkit-transform-style: preserve-3d; transform-style: preserve-3d;
+    -moz-transition: 0ms ease-in-out; -o-transition: 0ms ease-in-out; -webkit-transition: 0ms ease-in-out; transition: 0ms ease-in-out;
+}
+
+.leanorama-side {
+    z-index: 100;
+    margin: 0;
+    padding: 0;
+    width: 1025px;
+    height: 1025px;
+    display: block;
+    position: absolute;
+    -webkit-transform-style: preserve-3d; transform-style: preserve-3d;
+    background: url('../img/shattered.png');
+    background-size: 1026px 1026px;
+    -webkit-backface-visibility: hidden;
+}
+
+.leanorama-side-front {
+    -ms-transform: rotateY(270deg) translateZ(-512px);
+    -moz-transform: rotateY(270deg) translateZ(-512px);
+    -o-transform: rotateY(270deg) translateZ(-512px);
+    -webkit-transform: rotateY(270deg) translateZ(-512px);
+    transform: rotateY(270deg) translateZ(-512px);
+}
+
+.leanorama-side-back {
+    -webkit-transform: rotateY(90deg) translateZ(-512px);
+    -ms-transform: rotateY(90deg) translateZ(-512px);
+    -moz-transform: rotateY(90deg) translateZ(-512px);
+    -o-transform: rotateY(90deg) translateZ(-512px);
+    transform: rotateY(90deg) translateZ(-512px);
+}
+
+.leanorama-side-right {
+    -webkit-transform: rotateY(0deg) translateZ(-512px);
+    -ms-transform: rotateY(0deg) translateZ(-512px);
+    -moz-transform: rotateY(0deg) translateZ(-512px);
+    -o-transform: rotateY(0deg) translateZ(-512px);
+    transform: rotateY(0deg) translateZ(-512px);
+}
+
+.leanorama-side-left {
+    -webkit-transform: rotateY(180deg) translateZ(-512px);
+    -ms-transform: rotateY(180deg) translateZ(-512px);
+    -moz-transform: rotateY(180deg) translateZ(-512px);
+    -o-transform: rotateY(180deg) translateZ(-512px);
+    transform: rotateY(180deg) translateZ(-512px);
+}
+
+.leanorama-side-top {
+    -webkit-transform: rotateX(-90deg) rotateZ(-90deg) translateZ(-512px);
+    -ms-transform: rotateX(-90deg) rotateZ(-90deg) translateZ(-512px);
+    -moz-transform: rotateX(-90deg) rotateZ(-90deg) translateZ(-512px);
+    -o-transform: rotateX(-90deg) rotateZ(-90deg) translateZ(-512px);
+    transform: rotateX(-90deg) rotateZ(-90deg) translateZ(-512px);
+}
+
+.leanorama-side-bottom {
+    -webkit-transform: rotateX(90deg) rotateZ(90deg) translateZ(-512px);
+    -ms-transform: rotateX(90deg) rotateZ(90deg) translateZ(-512px);
+    -moz-transform: rotateX(90deg) rotateZ(90deg) translateZ(-512px);
+    -o-transform: rotateX(90deg) rotateZ(90deg) translateZ(-512px);
+    transform: rotateX(90deg) rotateZ(90deg) translateZ(-512px);
+}

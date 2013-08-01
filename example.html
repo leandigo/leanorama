@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        
+        <title>Leandigo</title>
+        <link href='http://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/leanorama.css">
+        <link rel="stylesheet" href="css/leanorama.hotspot.css">
+        <link rel="stylesheet" href="css/leanorama.controlbar.css">
+        <link rel="stylesheet" href="css/leanorama.infobox.css">        
+
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div id="outer" style='position: relative; top: 0; left: 0; min-width: 100%; min-height: 100%;'>
+            <div id="pano"></div>
+        </div>
+        
+        <script src="js/jquery.transit.js"></script>
+        <script src="js/leanorama.js"></script>
+        <script src="js/leanorama.hotspot.js"></script>
+        <script src="js/leanorama.controlbar.js"></script>
+        <script src="js/leanorama.infobox.js"></script>
+        <script>
+            var sides = [
+                'img/demo/0000.jpg',
+                'img/demo/0001.jpg',
+                'img/demo/0002.jpg',
+                'img/demo/0003.jpg',
+                'img/demo/0004.jpg',
+                'img/demo/0005.jpg',
+            ];
+
+            if (window.location.search.substr(1,3).length) {
+                for (var i=0; i<=5; i++) {
+                    sides[i] = 'http://leandigo.com/stuff/stock/' + window.location.search.substr(1,3) + '/000' + i + '.jpg';
+                }
+            }
+            x = $('#pano').leanorama({
+                autorotate: 0,
+                infobox: '<span class="leanorama-infobox-inner"><b>Hello World</b><br>Alrighty!</span>',
+                sides: sides,
+                hotspots: [
+                    {type: 'nav', x: 0  , y: 0  , face: 3, id: '3a'},
+//                    {type: 'nav', x: 45 , y: 0  , face: 3, id: '3a'},
+//                    {type: 'nav', x: 45 , y: 45 , face: 3, id: '3a'},
+//                    {type: 'nav', x: 60 , y: 0  , face: 3, id: '3a'},
+//                    {type: 'nav', x: 90 , y: 0  , face: 3, id: '3a'},
+//                    {type: 'nav', x: 0  , y: 30  , face: 3, id: '3a'},
+//                    {type: 'nav', x: 30 , y: 30  , face: 3, id: '3a'},
+//                    {type: 'nav', x: 60 , y: 30  , face: 3, id: '3a'},
+//                    {type: 'nav', x: 90 , y: 30  , face: 3, id: '3a'},
+                    {type: 'link', x: 256, y: 256, face: 0, id: '0a', name: 'Download Now!', value:'http://www.altavista.com'},
+                    /*{type: 'info', x: 768, y: 256, face: 0, id: '0b'},
+                    {type: 'nav', x: 256, y: 768, face: 0, id: '0c', name: 'Kitchen'},
+                    {type: 'nav', x: 768, y: 768, face: 0, id: '0d', name: 'Living Room Blah blah'},
+                    {type: 'nav', x: 256, y: 256, face: 1, id: '1a'},
+                    {type: 'nav', x: 768, y: 256, face: 1, id: '1b'},
+                    {type: 'nav', x: 256, y: 768, face: 1, id: '1c'},
+                    {type: 'nav', x: 768, y: 768, face: 1, id: '1d'},
+                    {type: 'nav', x: 256, y: 256, face: 2, id: '2a'},
+                    {type: 'nav', x: 768, y: 256, face: 2, id: '2b'},
+                    {type: 'nav', x: 256, y: 768, face: 2, id: '2c'},
+                    {type: 'nav', x: 768, y: 768, face: 2, id: '2d'}, 
+                    {type: 'link', x: 768, y: 256, face: 3, id: '3b'},
+                    {type: 'link', x: 256, y: 768, face: 3, id: '3c'},
+                    {type: 'info', x: 768, y: 768, face: 3, id: '3d', name: "FireWorks fireplace",
+                                                                      value: '<div id="blah">\
+                                                                                    <img src="http://bit.ly/Wc37WR">\
+                                                                                    <br><br>Unique and stylish FireWorks fireplace in your living room.<br><br>\
+                                                                                    <a href="http://bit.ly/WKYse7" class="btn btn-success" target="_blank">Buy it now</a>\
+                                                                                </div>'},
+                    /*{type: 'action', x: 256, y: 256, face: 4, id: '4a'},
+                    {type: 'nav', x: 768, y: 256, face: 4, id: '4b'},
+                    {type: 'nav', x: 256, y: 768, face: 4, id: '4c'},
+                    {type: 'nav', x: 768, y: 768, face: 4, id: '4d'},
+                    {type: 'link', x: 256, y: 256, face: 5, id: '5a'},
+                    {type: 'link', x: 768, y: 256, face: 5, id: '5b'},
+                    {type: 'action', x: 256, y: 768, face: 5, id: '5c'},
+                    {type: 'action', x: 768, y: 768, face: 5, id: '5d'},*/
+                ]
+            });
+
+        </script>
+    </body>
+</html>
