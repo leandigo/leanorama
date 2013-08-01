@@ -39,7 +39,10 @@ Version 0.2.0
             // Autorotate Events    
             EV_AUTOROTATE_STARTED       : 'leanoramaAutorotateStarted',
             EV_AUTOROTATE_STOPPED       : 'leanoramaAutorotateStopped',
-            
+
+            // External Events
+            EV_REFRESH                  : 'leanoramaRefresh',
+
             // Viewport Size Limitations
             CON_VIEWPORT_WIDTH_LIMIT    : 500,
             CON_VIEWPORT_HEIGHT_LIMIT   : 500,
@@ -59,18 +62,18 @@ Version 0.2.0
             gyro                        : true,                                             // (boolean)    Enable gyro/accelerometer bindings
             touch                       : false,                                            // (boolean)    Enable touch bindings
             delay                       : 25,
-            
+            perspective                 : 645,
+
+            // Internals
             dlan                        : 0,
             dlon                        : 0,
             dscale                      : 0,
-            transitions                 : 0,
-            orientation                 : undefined,
-            perspective                 : 645
+            transitions                 : 0
+
         };
         $.extend(leanorama, options);
 
         (function() {
-            console.log(this.perspective);
             // Private variables
             
             // Constants
@@ -140,7 +143,12 @@ Version 0.2.0
                     this.start();
                 }
             };
-            
+
+            this.refresh = function(e, data) {
+                $.extend(this, data);
+                this.restart();
+            };
+
             this.stop = function() {
                 if (!started) return;
                 var defunct = this.$container;
@@ -300,7 +308,10 @@ Version 0.2.0
             for (e in $.fn.leanorama.extensions) { $.fn.leanorama.extensions[e].call(this); }        
             this.autostart && this.start();
             $el.trigger(this.EV_INIT);
+            $el.on(this.EV_REFRESH, $.proxy(this.refresh, this));
+
         }).call(leanorama);
+        return this;
     };
     
     var ext_ctrl = function() {
@@ -314,7 +325,6 @@ Version 0.2.0
         this.unbind_functions   = [];
         this.bind_all           = function() {
             for (f in this.bind_functions) {
-                console.log(f);
                 this[f] && this.bind_functions[f].call(this);
             }
         };
@@ -530,7 +540,6 @@ Version 0.2.0
     $.fn.leanorama.extensions = [ext_ctrl, ext_ctrl_mouse, ext_ctrl_kbd, ext_ctrl_touch];
     
     // Add gyro if supported
-    console.log('this is ' + this.orientation)
     if (window.DeviceOrientationEvent) {
 
         // Gyro control extension
@@ -640,6 +649,7 @@ Version 0.2.0
     
         // Register Gyro to the Leanorama extensions
         $.fn.leanorama.extensions.push(ext_ctrl_gyro);
+
     }
 
     // Helper functions
@@ -653,5 +663,4 @@ Version 0.2.0
         return deg;
     }
 
-    return this;
 })(jQuery);
