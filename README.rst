@@ -246,6 +246,17 @@ Custom Extensions
 This is undocumented. If you've gone through the code of the extensions we have here, and still have questions, email
 us. We'll help.
 
+Known Issues, Bugs and Limitations
+----------------------------------
+* Webkit only (Chrome, Safari). At some point, switched to Transit_ as a first step toward cross-browser compatibility. Not much changed since.
+* The 6 cube faces get stretched to 1024x1024px no matter what the original resolution is.
+* Accelerometers on different devices behave differently. Samsung Galaxy series and iPhone 4S and below seem to behave consistently OK.
+* Window resize screws up the perspective. Resize events aren't handled.
+* No fancy preloading of images. Do your own preloading.
+* Desktop browsers have minor glitches with rendering of cube corners, that look like small white gaps. If you know how to fix that, let me know. *No, it's not the infamous backface visibility.*
+
+... And probably many more.
+
 License
 -------
 Copyright (c) 2013, Leandigo (`<www.leandigo.com>`_)

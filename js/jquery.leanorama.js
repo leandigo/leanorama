@@ -264,7 +264,6 @@ Version 0.2.0
             this.update_view = function() {
                 this.$container.transition({ scale: this.scale }, 0);
                 this.$surface.transition({ z: this.perspective, rotateX: this.lat, rotateY: this.lon }, 0);
-//                this.$sides.css('-webkit-backface-visibility', 'hidden');
             };
             
             // Toggle autorotate
