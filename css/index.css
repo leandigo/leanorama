@@ -1,54 +1,22 @@
 html, body {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-size: 12px;
+    height:     100%;
+    padding:    0;
+    margin:     0;
+    font-size:  12px;
+}
+
+#pano-outer {
+    position:   relative;
+    top:        0;
+    left:       0;
+    min-width:  100%;
+    min-height: 100%;
 }
 
 #pano {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.tv {
-    background: #fff;
-    position: absolute;
-    top: 400px;
-    left: 590px;
-    min-height: 95px;
-    min-width: 180px;
-    max-height: 95px;
-    max-width: 180px;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform-style: flat;
-    
-    -webkit-transform: translateZ(150px) perspective(700px) rotateX(2deg) rotateY(-20deg);
-    -ms-transform: translateZ(150px) perspective(700px) rotateX(2deg) rotateY(-20deg);
-    -moz-transform: translateZ(150px) perspective(700px) rotateX(2deg) rotateY(-20deg);
-    -o-transform: translateZ(150px) perspective(700px) rotateX(2deg) rotateY(-20deg);
-    transform: translateZ(150px) perspective(700px) rotateX(2deg) rotateY(-20deg);
-}
-
-.fireplace {
-    background: #000;
-    position: absolute;
-    top: 610px;
-    left: 600px;
-    min-height: 65px;
-    min-width: 16px;
-    max-height: 65px;
-    max-width: 160px;
-    
-    -webkit-transform: translateZ(150px) perspective(700px) rotateX(2deg) rotateY(-30deg);
-    -ms-transform: translateZ(150px) perspective(700px) rotateX(2deg) rotateY(-30deg);
-    -moz-transform: translateZ(150px) perspective(700px) rotateX(2deg) rotateY(-30deg);
-    -o-transform: translateZ(150px) perspective(700px) rotateX(2deg) rotateY(-30deg);
-    transform: translateZ(150px) perspective(700px) rotateX(2deg) rotateY(-30deg);
-}
-
-.tv iframe, .fireplace iframe {
-    max-width: inherit;
-    max-height: inherit;
+    position:   fixed;
+    top:        0;
+    left:       0;
+    width:      100%;
+    height:     100%;
 }

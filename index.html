@@ -2,23 +2,23 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="description" content="">
+        <meta name="description" content="Leanorama - Panoramic images viewer">
         <meta name="viewport" content="width=device-width">
         
-        <title>Leandigo</title>
-        <link href='http://fonts.googleapis.com/css?family=Kite+One' rel='stylesheet' type='text/css'>
+        <title>Leandigo | Leanorama panoramic viewer</title>
+
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
         <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/leanorama.css">
         <link rel="stylesheet" href="css/leanorama.hotspot.css">
         <link rel="stylesheet" href="css/leanorama.controlbar.css">
-        <link rel="stylesheet" href="css/leanorama.infobox.css">        
-
-        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/leanorama.infobox.css">
     </head>
     <body>
-        <div id="outer" style='position: relative; top: 0; left: 0; min-width: 100%; min-height: 100%;'>
+        <div id="pano-outer">
             <div id="pano"></div>
         </div>
         
@@ -43,11 +43,20 @@
                 }
             }
             x = $('#pano').leanorama({
-                autorotate: 0,
-                infobox: '<span class="leanorama-infobox-inner"><b>Hello World</b><br>Alrighty!</span>',
-                sides: sides,
+                autorotate:     0,
+                infobox:        '<b>Lenorama Viewer</b><br><em>Hello world!</em>',
+                sides:          sides,
                 hotspots: [
-                    {type: 'nav', x: 0  , y: 0  , face: 3, id: '3a'},
+                    {type: 'nav',       x: 256, y: 256, face: 0, id: '0a', name: 'Go There'},
+                    {type: 'link',      x: 256, y: 256, face: 0, id: '0b', name: 'Download Leanorama', value:'https://github.com/leandigo/Leanorama'},
+                    {type: 'action',    x: 556, y: 256, face: 0, id: '0c', name: 'Some action'},
+                    {type: 'info',      x: 556, y: 256, face: 0, id: '0d', name: 'That <em>awesome</em> video!',
+                                                                      value: '<div id="blah" style="text-align: center">\
+                                                                                    <iframe width="200" height="113" src="http://www.youtube.com/embed/9bZkp7q19f0" frameborder="0" allowfullscreen></iframe>\
+                                                                                    <br><br>In case you have forgotten about this awesome video, here it is!<br><br>\
+                                                                                    <a href="http://youtu.be/9bZkp7q19f0" class="btn btn-success" target="_blank">Watch it on YouTube</a>\
+                                                                                </div>'},
+
 //                    {type: 'nav', x: 45 , y: 0  , face: 3, id: '3a'},
 //                    {type: 'nav', x: 45 , y: 45 , face: 3, id: '3a'},
 //                    {type: 'nav', x: 60 , y: 0  , face: 3, id: '3a'},
@@ -56,9 +65,9 @@
 //                    {type: 'nav', x: 30 , y: 30  , face: 3, id: '3a'},
 //                    {type: 'nav', x: 60 , y: 30  , face: 3, id: '3a'},
 //                    {type: 'nav', x: 90 , y: 30  , face: 3, id: '3a'},
-                    {type: 'link', x: 256, y: 256, face: 0, id: '0a', name: 'Download Now!', value:'http://www.altavista.com'},
+
                     /*{type: 'info', x: 768, y: 256, face: 0, id: '0b'},
-                    {type: 'nav', x: 256, y: 768, face: 0, id: '0c', name: 'Kitchen'},
+
                     {type: 'nav', x: 768, y: 768, face: 0, id: '0d', name: 'Living Room Blah blah'},
                     {type: 'nav', x: 256, y: 256, face: 1, id: '1a'},
                     {type: 'nav', x: 768, y: 256, face: 1, id: '1b'},
@@ -67,7 +76,7 @@
                     {type: 'nav', x: 256, y: 256, face: 2, id: '2a'},
                     {type: 'nav', x: 768, y: 256, face: 2, id: '2b'},
                     {type: 'nav', x: 256, y: 768, face: 2, id: '2c'},
-                    {type: 'nav', x: 768, y: 768, face: 2, id: '2d'}, 
+                    {type: 'nav', x: 768, y: 768, face: 2, id: '2d'},
                     {type: 'link', x: 768, y: 256, face: 3, id: '3b'},
                     {type: 'link', x: 256, y: 768, face: 3, id: '3c'},
                     {type: 'info', x: 768, y: 768, face: 3, id: '3d', name: "FireWorks fireplace",
@@ -82,7 +91,7 @@
                     {type: 'nav', x: 768, y: 768, face: 4, id: '4d'},
                     {type: 'link', x: 256, y: 256, face: 5, id: '5a'},
                     {type: 'link', x: 768, y: 256, face: 5, id: '5b'},
-                    {type: 'action', x: 256, y: 768, face: 5, id: '5c'},
+
                     {type: 'action', x: 768, y: 768, face: 5, id: '5d'},*/
                 ]
             });

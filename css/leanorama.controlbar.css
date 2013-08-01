@@ -10,16 +10,16 @@
 */
 
 @font-face {
-    font-family: 'Leanscape';
-    src: url('../font/leanscape.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    font-family:    'Leanscape';
+    src:            url('../font/leanscape.ttf') format('truetype');
+    font-weight:    normal;
+    font-style:     normal;
 }
 
-
 .leanorama-controlbar {
-    position: fixed;
-    bottom: 0; left: 0;
+    position:   fixed;
+    bottom:     0;
+    left:       0;
     
     /* prevent text selection of buttons */
     -webkit-touch-callout: none;
@@ -31,36 +31,42 @@
 }
 
     .leanorama-controlbar-bg {
-        position: absolute;
-        bottom: 0; left: 0;    
-        width: 100%; height: 100%;
-        background-color: #000;
-        opacity: 0.6; filter: alpha(opacity=60);
-        border-top-right-radius: .5em;
+        position:           absolute;
+        bottom:             0;
+        left:               0;
+        width:              100%;
+        height:             100%;
+        background-color:   #000;
+        opacity:            0.6;
+        filter:             alpha(opacity=60);
+        border-top-right-radius: 0.2rem;
     }
     
     .leanorama-controlbar-controls {
-        position: relative;
-        padding: 0 1em;
+        position:   relative;
+        padding:    0 1em;
     }
     
         .leanorama-controlbar-button {
-            display: inline-block;
-            padding: .07em .1em;
-            font-family: Leanscape;
-            font-size: 5em;
-            color: #fff;
-            z-index: 10001;
+            display:        inline-block;
+            padding:        0.4em .1em;
+            font-family:    Leanscape;
+            font-size:      5rem;
+            line-height:    1rem;
+            color:          #fff;
+            z-index:        10001;
+        }
+
+        .actionable:hover {
+            color:  #B4E758;
         }
         
         @media only screen and (max-device-width: 480px) {
             .leanorama-controlbar-button {
-                font-size: 3em;
+                font-size:  3rem;
             }
         }
     
         .leanorama-controlbar-button:hover {
-            cursor: pointer;   
+            cursor:     pointer;
         }
-
-

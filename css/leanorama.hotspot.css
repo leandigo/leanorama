@@ -12,17 +12,17 @@
 
 /* Hotspot styling */
 .leanorama-hotspot {
-    position: absolute;
+    position:   absolute;
 }
 
 .leanorama-hotspot-dot {
-    max-height: 0;
-    max-width: 0;
+    max-height:     0;
+    max-width:      0;
 }
 
 .leanorama-hotspot-handle {
-    position: absolute;
-    z-index: 20000;
+    position:   absolute;
+    z-index:    20000;
 }
 
 /* Various hotspot types */
@@ -30,44 +30,52 @@
 .leanorama-hotspot-handle-info,
 .leanorama-hotspot-handle-link,
 .leanorama-hotspot-handle-action {
-    display: block;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    display:            block;
+    background-size:    100% 100%;
+    background-repeat:  no-repeat;
 }
 
 .leanorama-hotspot-handle-nav:hover,
 .leanorama-hotspot-handle-info:hover,
 .leanorama-hotspot-handle-link:hover,
 .leanorama-hotspot-handle-action:hover {
-    cursor: pointer;
+    cursor:     pointer;
 }
 
 /* Navigation Hotspot - Redirect to another viewpoint */
 .leanorama-hotspot-handle-nav {
-    width: 3em; height: 3em;
-    background-image: url(../img/arrow.png);
-    border: 1px solid red;
+    width:              4em;
+    height:             4em;
+    background-image:   url(../img/arrow.png);
 }
 
 .tooltip-inner {
-    white-space: pre;
-    max-width: none;
+    white-space:    pre;
+    max-width:      none;
 }
 
 /* Informational Hotspot - Info popup with text or image, etc. */
 .leanorama-hotspot-handle-info {
-    width: 2em; height: 2em;
-    background-image: url(../img/info.png);
+    width:              4em;
+    height:             4em;
+    background-image:   url(../img/info.png);
 }
 
 /* Link Hotspot - Download PDF, etc. */
 .leanorama-hotspot-handle-link {
-    width: 2em; height: 2em;
-    background-image: url(../img/link.png);
+    width:              4em;
+    height:             4em;
+    background-image:   url(../img/link.png);
 }
 
 /* Action Hotspot - On/Off lights, etc. */
 .leanorama-hotspot-handle-action {
-    width: 2em; height: 2em;
-    background-image: url(../img/action.png);
+    width:              4em;
+    height:             4em;
+    background-image:   url(../img/action.png);
+}
+
+/* Bootstrap Override of popover width */
+.popover {
+    min-width:  250px;
 }

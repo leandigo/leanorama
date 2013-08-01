@@ -29,26 +29,6 @@ $.fn.leanorama.extensions.push(function () {
         this.$el.trigger(this.EV_INFOBOX_STARTED);
     };
 
-//    // Respond to the show topmap event
-//    $this.bind('infobox-show', function() {
-//        create_infobox();
-//    });
-//    
-//    // Respond to the hide topmap event
-//    $this.bind('infobox-hide', function() {
-//        remove_infobox();
-//    });
-//    
-    // Respond to the overall show hud event
-//    $this.bind('hud-show', function() {
-//        create_infobox();
-//    });
-//    
-//    // Respond to the overall hide hud event
-//    $this.bind('hud-hide', function() {
-//        remove_infobox();
-//    });
-//    
     // Init the extension on startup
     var v = this.viewport();
     if (v.width > this.CON_VIEWPORT_WIDTH_LIMIT) {

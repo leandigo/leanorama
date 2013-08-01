@@ -23,18 +23,18 @@ $.fn.leanorama.extensions.push(function start() {
             show:       div({class: 'leanorama-controlbar-button'}).html('v')   // Show bar
                         .css('display', 'none')
                         .css('margin-left', '.5em'),
-            hide:       div({class: 'leanorama-controlbar-button'}).html('h'),  // Hide bar
+            hide:       div({class: 'leanorama-controlbar-button actionable'}).html('h'),  // Hide bar
             delim:      div({class: 'leanorama-controlbar-button'}).html('|'),  // Buttons delimiter
-            zoomin:     div({class: 'leanorama-controlbar-button'}).html('+'),  // Zoom in
-            zoomout:    div({class: 'leanorama-controlbar-button'}).html('-'),  // Zoom out
-            play:       div({class: 'leanorama-controlbar-button'}).html('p'),  // Start autorotate
-            stop:       div({class: 'leanorama-controlbar-button'}).html('s'),  // Stop autorotate
-            up:         div({class: 'leanorama-controlbar-button'}).html('u'),  // Look up
-            down:       div({class: 'leanorama-controlbar-button'}).html('d'),  // Look down
-            left:       div({class: 'leanorama-controlbar-button'}).html('l'),  // Look left
-            right:      div({class: 'leanorama-controlbar-button'}).html('r'),  // Look right
-            touch:      div({class: 'leanorama-controlbar-button'}).html('t'),  // Touch control (turns Gyro off)
-            gyro:       div({class: 'leanorama-controlbar-button'}).html('g')   // Gyro control (turns Touch off)
+            zoomin:     div({class: 'leanorama-controlbar-button actionable'}).html('+'),  // Zoom in
+            zoomout:    div({class: 'leanorama-controlbar-button actionable'}).html('-'),  // Zoom out
+            play:       div({class: 'leanorama-controlbar-button actionable'}).html('p'),  // Start autorotate
+            stop:       div({class: 'leanorama-controlbar-button actionable'}).html('s'),  // Stop autorotate
+            up:         div({class: 'leanorama-controlbar-button actionable'}).html('u'),  // Look up
+            down:       div({class: 'leanorama-controlbar-button actionable'}).html('d'),  // Look down
+            left:       div({class: 'leanorama-controlbar-button actionable'}).html('l'),  // Look left
+            right:      div({class: 'leanorama-controlbar-button actionable'}).html('r'),  // Look right
+            touch:      div({class: 'leanorama-controlbar-button actionable'}).html('t'),  // Touch control (turns Gyro off)
+            gyro:       div({class: 'leanorama-controlbar-button actionable'}).html('g')   // Gyro control (turns Touch off)
         };
         
         // Check if thE autorotate is on. Yes, show Stop button, otherwise the Play button
@@ -48,10 +48,21 @@ $.fn.leanorama.extensions.push(function start() {
         var $container = div({class: 'leanorama-controlbar-controls'})
                      .append($controls.hide)
                      .append($controls.delim);
-        
-        // Add gyro/touch controls, if supported
+
+
+        // Check for device orientation support to enable gyro control
+        var canHandleOrientation;
         if (window.DeviceOrientationEvent) {
-            $container.append($controls.touch)
+            window.addEventListener("deviceorientation", handleOrientation, false);
+        }
+
+        function handleOrientation(event){
+          canHandleOrientation = event; // will be either null or with event data
+        }
+
+        // Add gyro/touch controls, if supported
+        if (canHandleOrientation) {
+          $container.append($controls.touch)
                       .append($controls.gyro);
             if (this.gyro) {
                 $controls.gyro.css('display', 'none');
