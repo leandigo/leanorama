@@ -9,7 +9,11 @@
 
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-
+        <script src="js/jquery.transit.js"></script>
+        <script src="js/jquery.leanorama.js"></script>
+        <script src="js/jquery.leanorama.hotspot.js"></script>
+        <script src="js/jquery.leanorama.controlbar.js"></script>
+        <script src="js/jquery.leanorama.infobox.js"></script>
         <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/leanorama.css">
@@ -18,55 +22,10 @@
         <link rel="stylesheet" href="css/leanorama.infobox.css">
     </head>
     <body>
+        <a href="https://github.com/leandigo/leanorama"><img style="z-index: 10000; position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
         <div id="pano-outer">
             <div id="pano"></div>
         </div>
-        
-        <script src="js/jquery.transit.js"></script>
-        <script src="js/jquery.leanorama.js"></script>
-        <script src="js/jquery.leanorama.hotspot.js"></script>
-        <script src="js/jquery.leanorama.controlbar.js"></script>
-        <script src="js/jquery.leanorama.infobox.js"></script>
-        <script>
-            var sides = [
-                'img/demo/0000.jpg',
-                'img/demo/0001.jpg',
-                'img/demo/0002.jpg',
-                'img/demo/0003.jpg',
-                'img/demo/0004.jpg',
-                'img/demo/0005.jpg',
-            ];
-
-            if (window.location.search.substr(1,3).length) {
-                for (var i=0; i<=5; i++) {
-                    sides[i] = 'http://leandigo.com/stuff/stock/' + window.location.search.substr(1,3) + '/000' + i + '.jpg';
-                }
-            }
-            var params = {
-                autorotate:     0,
-                infobox:        '<b>Lenorama Viewer</b><br><em>Hello world!</em>',
-                sides:          sides,
-                hotspots: [
-                    {type: 'nav',       x: 0, y: 0, face: 0, id: '0a', name: 'Go There', value: '24'},
-                    {type: 'link',      x: 0, y: 1000, face: 0, id: '0b', name: 'Download Leanorama', value:'https://github.com/leandigo/Leanorama'},
-                    {type: 'action',    x: 1000, y: 0, face: 0, id: '0c', name: 'Some action'},
-                    {type: 'info',      x: 1000, y: 1000, face: 0, id: '0d', name: 'That <em>awesome</em> video!',
-                                                                      value: '<div id="blah" style="text-align: center">\
-                                                                                    <iframe width="200" height="113" src="http://www.youtube.com/embed/9bZkp7q19f0" frameborder="0" allowfullscreen></iframe>\
-                                                                                    <br><br>In case you have forgotten about this awesome video, here it is!<br><br>\
-                                                                                    <a href="http://youtu.be/9bZkp7q19f0" class="btn btn-success" target="_blank">Watch it on YouTube</a>\
-                                                                                </div>'},
-                ]
-            };
-            $('#pano').leanorama(params).on('leanoramaHotspotClick', function(e, hotspot) {
-                if (hotspot.type == 'nav') {
-                    var sides = [];
-                    for (var i=0; i<=5; i++) {
-                        sides[i] = 'http://leandigo.com/stuff/stock/' + hotspot.value + '/000' + i + '.jpg';
-                    }
-                    $(this).trigger('leanoramaRefresh', {sides: sides});
-                }
-            });
-        </script>
+        <script src="example/tour.js"></script>
     </body>
 </html>
