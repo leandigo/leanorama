@@ -276,3 +276,7 @@ Released under the MIT License. See the LICENSE file for details
 .. _cubic: http://wiki.panotools.org/Cubic_Projection
 .. _Transit: http://ricostacruz.com/jquery.transit/
 .. _Rico Sta. Cruz: http://ricostacruz.com/
+
+.. figure:: https://cruel-carlota.pagodabox.com/a7195b392baa74177cf18ae04ebec19a
+   :alt: Githalytics
+   :target: http://githalytics.com/leandigo/leanorama
