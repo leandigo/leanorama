@@ -241,7 +241,7 @@ This is an example virtual tour configuration script::
     });
 
 You can clone a working demo from `<https://github.com/leandigo/leanorama/tree/gh-pages>`_. It contains a fully-functional
- configuration script.
+configuration script.
 
 
 Custom Extensions
