@@ -270,8 +270,8 @@ Released under the MIT License. See the LICENSE file for details
 .. _Alexandre Duret-Lutz: http://www.flickr.com/photos/gadl/
 .. _heiwa4126: http://www.flickr.com/photos/heiwa4126
 .. _jannefoo: http://www.flickr.com/photos/jannefoo
-.. _Demo: http://leandigo.com/demo/leanorama.html
-.. _Leandigo: http://leandigo.github.io/leanorama/
+.. _Demo: http://leandigo.github.io/leanorama/
+.. _Leandigo: http://leandigo.com
 .. _equirectangular: http://wiki.panotools.org/Equirectangular_Projection
 .. _cubic: http://wiki.panotools.org/Cubic_Projection
 .. _Transit: http://ricostacruz.com/jquery.transit/
