@@ -3,6 +3,8 @@ var tour = {
         sides: ['example/07/0000.jpg', 'example/07/0001.jpg', 'example/07/0002.jpg', 'example/07/0003.jpg', 'example/07/0004.jpg', 'example/07/0005.jpg'],
         autorotate: 0.15,
         infobox: '<b>Transporter Room</b><br>Where do you want to go?',
+        touch: true,
+        gyro: true,
         hotspots: [
             { type: 'nav', face: 0, x: 200, y: 500, name:'Snowy Mountain', value: 'snow' },
             { type: 'nav', face: 3, x: 500, y: 500, name:'Arcade', value: 'arcade' },
