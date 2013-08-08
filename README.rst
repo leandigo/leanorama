@@ -10,7 +10,7 @@ Leanorama started as a client-side infrastructure component of a *virtual tour* 
 
 Leanorama allows navigation inside equirectangular_-turned-`cubic`_ panoramic images on HTML5 websites. As a jQuery plugin,
 it's easy to embed and configure. It's working on modern **webkit** browsers, including mobile browsers of iOS 4+ and
-Android 3+.
+Android 3+, and IE10.
 
 Features
 --------
@@ -20,6 +20,7 @@ standalone solution. It doesn't require paying for a specific software or servic
 All you need is some very basic HTML/JavaScript skills, and a cubic_ remap of an equirectangular_ panoramic image.
 You'll be able to create virtual tours supporting:
 
+* Works on Safari, Chrome, Internet Explorer 10+
 * 3D immersive rendition of cubic panorama images
 * *Pitch*, *yaw* and *zoom* view manipulation
 * Control inputs: keyboard, mouse, touch, orientation (accelerometer or gyro on mobile devices)
@@ -251,7 +252,7 @@ us. We'll help.
 
 Known Issues, Bugs and Limitations
 ----------------------------------
-* Webkit only (Chrome, Safari). At some point, switched to Transit_ as a first step toward cross-browser compatibility. Not much changed since.
+* Doesn't work on Firefox.
 * The 6 cube faces get stretched to 1024x1024px no matter what the original resolution is.
 * Accelerometers on different devices behave differently. Samsung Galaxy series and iPhone 4S and below seem to behave consistently OK.
 * Window resize screws up the perspective. Resize events aren't handled.
