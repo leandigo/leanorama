@@ -238,7 +238,7 @@ This is an example virtual tour configuration script::
 
     // Change location when navigational hotspots are clicked
     pano.on('leanoramaHotspotClick', function(e, hotspot) {
-        if (hotspot.type == 'nav') $(this).trigger('leanoramaRefresh', {tour[hotspot.value]});
+        if (hotspot.type == 'nav') $(this).trigger('leanoramaRefresh', tour[hotspot.value]);
     });
 
 You can clone a working demo from `<https://github.com/leandigo/leanorama/tree/gh-pages>`_. It contains a fully-functional
