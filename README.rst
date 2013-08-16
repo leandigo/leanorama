@@ -1,5 +1,5 @@
-Leanorama - a jQuery plugin for displaying and navigating panoramic images
-==========================================================================
+Leanorama - a jQuery plugin for displaying and navigating Virtual Tours based on panoramic images
+=================================================================================================
 *Leanorama is essentially abandonware. That means Leandigo is no longer actively developing this. Still, pull requests will be accepted.*
 
 What is this
