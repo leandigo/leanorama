@@ -1,3 +1,8 @@
+Leanorama2 - A new version is in the works
+==========================================
+`Leanorama2`_
+
+
 Leanorama - a jQuery plugin for displaying and navigating Virtual Tours based on panoramic images
 =================================================================================================
 *Leanorama is essentially abandonware. That means Leandigo is no longer actively developing this. Still, pull requests will be accepted.*
@@ -277,6 +282,7 @@ Released under the MIT License. See the LICENSE file for details
 .. _cubic: http://wiki.panotools.org/Cubic_Projection
 .. _Transit: http://ricostacruz.com/jquery.transit/
 .. _Rico Sta. Cruz: http://ricostacruz.com/
+.. _Leanorama2: http://github.com/leandigo/leanorama2/
 
 .. figure:: https://cruel-carlota.pagodabox.com/a7195b392baa74177cf18ae04ebec19a
    :alt: Githalytics
